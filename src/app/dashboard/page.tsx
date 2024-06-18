@@ -1,3 +1,4 @@
+import Header from '@/components/header'
 import React from 'react'
 
 type Props = {}
@@ -5,7 +6,7 @@ type Props = {}
 const Dashboard = (props: Props) => {
   return (
     <div className = " h-screen bg-[#fefae0]">
-      dashboard
+      <Header />
     </div>
   )
 }
