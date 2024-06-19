@@ -2,37 +2,43 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ThemeSwitch } from "./theme";
+import { UserButton } from "@clerk/nextjs";
 
 const Header = () => {
   const pathname = usePathname();
   return (
-    <header className="bg-background border-b text-foreground py-2">
+    <header className="bg-[#fefae0] border-b text-foreground py-2">
       <div className="max-w-screen-xl mx-auto">
         <div className="flex justify-between items-center">
           <div>
             <Link
               href="/"
-              className="font-bold text-slate-800 dark:text-slate-50">
+              className="font-bold text-slate-800 dark:text-slate-50"
+            >
               EISENHOWER FOCUS
             </Link>
           </div>
           <nav>
-            <ul className="flex gap-3">
+            <ul className="flex gap-8">
               <li>
                 <Link
                   href="/dashboard"
                   className={`${
-                    pathname === "/" ? "text-blue-500 font-semibold" : ""
+                    pathname === "/dashboard" 
+                     ? "text-green-900 font-semibold tracking-widest uppercase"
+                      : " tracking-widest uppercase hover:text-gray-600"
                   }`}
                 >
-                  Home
+                  Dashboard
                 </Link>
               </li>
               <li>
                 <Link
                   href="/tasks"
                   className={`${
-                    pathname === "/tasks" ? "text-blue-500 font-semibold" : ""
+                    pathname === "/tasks"
+                      ? "text-green-900 font-semibold tracking-widest uppercase"
+                      : " tracking-widest uppercase hover:text-gray-600"
                   }`}
                 >
                   Tasks
@@ -43,8 +49,8 @@ const Header = () => {
                   href="/challenges"
                   className={`${
                     pathname === "/challenges"
-                      ? "text-blue-500 font-semibold"
-                      : ""
+                      ? "text-green-900 font-semibold tracking-widest uppercase"
+                      : " tracking-widest uppercase hover:text-gray-600"
                   }`}
                 >
                   Challenges
@@ -52,7 +58,11 @@ const Header = () => {
               </li>
             </ul>
           </nav>
-          <ThemeSwitch />
+
+          <div className="flex gap-5 items-center">
+            <UserButton />
+            <ThemeSwitch />
+          </div>
         </div>
       </div>
     </header>

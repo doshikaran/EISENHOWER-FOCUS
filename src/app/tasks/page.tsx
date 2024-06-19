@@ -1,11 +1,18 @@
-import React from 'react'
+import Tasks from "./tasks";
+import { Metadata } from "next";
 
-type Props = {}
+export const metadata: Metadata = {
+  title: "Task and Issue Tracker",
+  description:
+    "",
+};
 
-const Tasks = (props: Props) => {
+export default function TaskPage() {
   return (
-    <div>Tasks</div>
-  )
+    <div className=" px-20 py-5 bg-gradient-to-r from-[#fefae0] to-[#faedcd] h-screen">
+      <div className="">
+        <Tasks />
+      </div>
+    </div>
+  );
 }
-
-export default Tasks

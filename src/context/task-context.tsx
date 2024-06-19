@@ -106,7 +106,6 @@ export const TaskProvider: React.FC<TaskProviderProps> = ({ children }) => {
 
   const updateTask = (taskId: string, updatedTask: Partial<Task>) => {
     const tasks = getTasks();
-
     const updatedTasks = tasks.map((task) =>
       task.id === taskId ? { ...task, ...updatedTask } : task
     );

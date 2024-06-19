@@ -4,7 +4,9 @@ type Props = {}
 
 const Challenges = (props: Props) => {
   return (
-    <div>TasChallengesks</div>
+    <div
+    className=' bg-gradient-to-r from-[#fefae0] to-[#faedcd] h-screen'
+    >TasChallengesks</div>
   )
 }
 
